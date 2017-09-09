@@ -4,15 +4,15 @@ I want to have a Title Display page
 So that I can interact with key information about my favourite movie
 
   Background: 
-    Given I am using the Desktop version of the website
+    Given I am using the desktop version of the website
   
   Scenario: Add to Watchlist
     Given I load the title display page of my favourite movie
       And I am logged in
-     When I add the movie to the Watchlist
-     Then the movie is added to my watch list
+     When I add the movie to my Watchlist
+     Then the movie is added to my Watchlist
   
-  Scenario: Rate This movie
+  Scenario: Rate This Movie
     Given I load the title display page of my favourite movie
       And I am logged in
      When I rate the movie
@@ -28,9 +28,9 @@ So that I can interact with key information about my favourite movie
     Given I load the title display page of my favourite movie
       And I am logged in
      When I contribute by writing review
-     Then I am prompted to add a review
+     Then I am prompted to add a new review
   
-  Scenario Outline: Redirect to login page
+  Scenario Outline: Interact Website as Anonymous User
     Given I load the title display page of my favourite movie
       And I am not logged in
      When I attempt to <action>
@@ -41,5 +41,5 @@ So that I can interact with key information about my favourite movie
       | Add to Watchlist | 
       | Rate This movie  | 
       | Edit Page        | 
-      | Write Revie      | 
+      | Write Review     | 
 

@@ -4,7 +4,7 @@ I want to have a Title Display page
 So that I can browse key information about my favourite movie
 
   Background: 
-    Given I am using the Desktop version of the website
+    Given I am using the desktop version of the website
   
   Scenario Outline: Browse Key Information
     Given I load the title display page of my favourite movie
