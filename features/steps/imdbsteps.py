@@ -1,8 +1,7 @@
 from behave import given, when, then
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Firefox()
 
@@ -21,29 +20,23 @@ def step_impl(context):
 
 @then(u'the list of movies should only contain relevant results')
 def step_impl(context):
-    #as long as Next is avaliable, click on next
-    #    get html source
-    #    assert all genre contain word "Comedy"
-    html = driver.page_source
-    assert "terry" in html
-    #raise NotImplementedError(u'STEP: Then the list of movies should only contain relevant results')
+    all_genres_in_page = driver.find_elements_by_class_name('genre')
+    for genre in all_genres_in_page:
+        assert "Comedy" in genre.text
 
 
 @given(u'I sort the list by "Release Date"')
 def step_impl(context):
-    #driver.find_element_by_xpath("//select[@name='sort']/option[text()='us:descending']").click()
-    all_options = driver.find_element_by_id("Component1")
-    options = all_options.find_elements_by_tag_name("option")
-    for each_option in all_options:
-        print(each_option.get_attribute("value"))
-    driver.find_element_by_css_selector("select#sort > option[value='us:descending']").click()
-    print(driver.getCurrentUrl())
-    assert "sort=us" in driver.getCurrentUrl()
-    #raise NotImplementedError(u'STEP: Given I sort the list by "Release Date"')
+    selection = Select(driver.find_element_by_class_name('lister-sort-by'))
+    selection.select_by_value("us:descending")
+    assert "sort=us" in driver.current_url
 
 
 @then(u'the list of movies should be displayed in order of release date')
 def step_impl(context):
-    #get html source
-    #go thru the list, extract year, assert next item is <= last item
-    raise NotImplementedError(u'STEP: the list of movies should be displayed in order of release date')
+    all_years_in_page = driver.find_elements_by_class_name('secondaryInfo')
+
+    cursor_year = all_years_in_page[0].text
+    for year in all_years_in_page:
+        assert year.text <= cursor_year
+        cursor_year = year.text
