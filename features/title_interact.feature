@@ -1,45 +1,41 @@
 Feature: Interact with IMDB Display Title page
+In order to interact with all the key information about a movie in one place
 As a user to the IMDB website
-I want to have a Title Display page 
-So that I can interact with key information about my favourite movie
+I want to have a title display page 
 
   Background: 
-    Given I am using the desktop version of the website
+    Given a web browser is at the IMDB title display page of a movie
   
   Scenario: Add to Watchlist
-    Given I load the title display page of my favourite movie
-      And I am logged in
-     When I add the movie to my Watchlist
-     Then the movie is added to my Watchlist
+    Given the user is logged in
+     When the user adds the movie to its Watchlist
+     Then the movie is added to the user's Watchlist
   
   Scenario: Rate This Movie
-    Given I load the title display page of my favourite movie
-      And I am logged in
-     When I rate the movie
-     Then the my rating is accepted 
+    Given the user is logged in
+     When the user rates the movie
+     Then the rating for the movie is accepted 
   
   Scenario: Edit Page
-    Given I load the title display page of my favourite movie
-      And I am logged in
-     When I contribute by editing page
-     Then I see existing content editable
+    Given the user is logged in
+     When the user contributes by editing the title display page
+     Then the user is redirected to editing screen
+      And the existing content of the movie is editable
   
   Scenario: Write Review
-    Given I load the title display page of my favourite movie
-      And I am logged in
-     When I contribute by writing review
-     Then I am prompted to add a new review
+    Given the user is logged in
+     When the user contributes by writing review
+     Then the user will be prompted to add a new review
   
   Scenario Outline: Interact Website as Anonymous User
-    Given I load the title display page of my favourite movie
-      And I am not logged in
-     When I attempt to <action>
-     Then I am redirected to the log-in page
+    Given the user is not logged in
+     When the user attempts to <action>
+     Then the user will be redirected to the log-in page
   
     Examples: 
       | action           | 
-      | Add to Watchlist | 
-      | Rate This movie  | 
-      | Edit Page        | 
-      | Write Review     | 
+      | add to Watchlist | 
+      | rate the movie   | 
+      | edit page        | 
+      | write review     | 
 

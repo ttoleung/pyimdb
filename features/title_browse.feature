@@ -1,15 +1,12 @@
 Feature: Browse IMDB Display Title page
+In order to browse the all the key information about a movie in one place
 As a user to the IMDB website
-I want to have a Title Display page 
-So that I can browse key information about my favourite movie
+I want to have a title display page 
 
-  Background: 
-    Given I am using the desktop version of the website
-  
   Scenario Outline: Browse Key Information
-    Given I load the title display page of my favourite movie
-     When I click on the <context> link
-     Then I am redirected to <context> page of this movie
+    Given a web browser is at the IMDB title display page of a movie
+     When the user clicks on the <context> link
+     Then the user is redirected to <context> page of this movie
   
     Examples: 
       | context            | 
@@ -19,7 +16,12 @@ So that I can browse key information about my favourite movie
       | IMDbPro            | 
   
   Scenario: View Trailer
-    Given I load the title display page of my favourite movie
-     When I play the trailer
-     Then the trailer video is played 
-  
+    Given a web browser is at the IMDB title display page of a movie
+     When the user plays the trailer
+     Then the trailer of the movie is played 
+
+  Scenario: View More Trailers
+    Given a web browser is playing the trailer of a movie
+     When the user presses the left or right arrow keys
+     Then a different trailer of the movie is played
+ 
