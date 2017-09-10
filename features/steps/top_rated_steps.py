@@ -34,9 +34,7 @@ def step_impl(context):
 
 @then(u'the list of movies should be displayed in order of release date')
 def step_impl(context):
-    all_years_in_page = driver.find_elements_by_class_name('secondaryInfo')
+    years_in_page = driver.find_elements_by_class_name('secondaryInfo')
+    assert all(years_in_page[i].text >= years_in_page[i+1].text \
+        for i in iter(range(len(years_in_page)-1)))
 
-    cursor_year = all_years_in_page[0].text
-    for year in all_years_in_page:
-        assert year.text <= cursor_year
-        cursor_year = year.text
