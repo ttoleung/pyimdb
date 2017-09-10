@@ -6,3 +6,4 @@ The tests required selenium webdriver to run, and it needs to be run with a head
 
     Xvfb :99 & export DISPLAY=:99
 
+![Alt text](/Capture2.PNG?raw=true "Sample Test Run")
