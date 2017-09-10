@@ -1,4 +1,4 @@
-Feature: IMDB Display Title page
+Feature: Interact with IMDB Display Title page
 As a user to the IMDB website
 I want to have a Title Display page 
 So that I can interact with key information about my favourite movie
