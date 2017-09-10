@@ -1,15 +1,10 @@
-Feature: Interact with IMDB Display Title page
-In order to interact with all the key information about a movie in one place
+Feature: Contribute Title Display Page
+In order to contribute to various information about a movie in one place
 As a user to the IMDB website
 I want to have a title display page 
 
   Background: 
     Given a web browser is at the IMDB title display page of a movie
-  
-  Scenario: Add to Watchlist
-    Given the user is logged in
-     When the user adds the movie to its Watchlist
-     Then the movie is added to the user's Watchlist
   
   Scenario: Rate This Movie
     Given the user is logged in
@@ -34,7 +29,6 @@ I want to have a title display page
   
     Examples: 
       | action           | 
-      | add to Watchlist | 
       | rate the movie   | 
       | edit page        | 
       | write review     | 

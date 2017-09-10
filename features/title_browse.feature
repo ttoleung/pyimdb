@@ -1,9 +1,9 @@
-Feature: Browse IMDB Display Title page
+Feature: Browse Title Dissplay Page
 In order to browse the all the key information about a movie in one place
 As a user to the IMDB website
 I want to have a title display page 
 
-  Scenario Outline: Browse Key Information
+  Scenario Outline: Browse Movie Detail 
     Given a web browser is at the IMDB title display page of a movie
      When the user clicks on the <context> link
      Then the user is redirected to <context> page of this movie
