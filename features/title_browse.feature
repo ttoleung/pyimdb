@@ -1,4 +1,4 @@
-Feature: Browse Title Dissplay Page
+Feature: Browse Title Display Page
 In order to browse the all the key information about a movie in one place
 As a user to the IMDB website
 I want to have a title display page as a portal/dashboaard

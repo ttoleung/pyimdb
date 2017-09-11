@@ -1,7 +1,7 @@
 Feature: Contribute Title Display Page
 In order to contribute to various information about a movie in one place
 As a user to the IMDB website
-I want to have a title display page as a portal/dashboaard
+I want to have a title display page as a portal/dashboard
 
   Background: 
     Given a web browser is at the IMDB title display page of a movie
