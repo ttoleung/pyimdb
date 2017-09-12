@@ -22,6 +22,6 @@ I want to have a title display page as a portal/dashboaard
 
   Scenario: View More Trailers
     Given a web browser is playing the trailer of a movie
-     When the user presses the left or right arrow keys
+     When the user presses next or previous
      Then a different trailer of the movie is played
  
